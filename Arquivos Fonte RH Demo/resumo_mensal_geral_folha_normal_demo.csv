@@ -1,0 +1,37 @@
+﻿Departamento;Rubrica_Nome;Tipo;N_Empregados;Valor_Informado;Valor_Calculado
+Administracao - Fabrica;HORAS NORMAIS;Provento;6;9851.4;9689.18
+Administracao - Fabrica;HORAS EXTRAS 50%;Provento;6;757.8;726.27
+Administracao - Fabrica;INSS;Desconto;6;1136.7;1111.57
+Administracao - Fabrica;IRRF;Desconto;6;505.2;513.08
+Pre-Moldados;HORAS NORMAIS;Provento;8;15896.4;15496.1
+Pre-Moldados;HORAS EXTRAS 50%;Provento;8;1222.8;1256.58
+Pre-Moldados;INSS;Desconto;8;1834.2;1759.15
+Pre-Moldados;IRRF;Desconto;8;815.2;841.05
+Operacional;HORAS NORMAIS;Provento;6;9484.8;9147.01
+Operacional;HORAS EXTRAS 50%;Provento;6;729.6;735.93
+Operacional;INSS;Desconto;6;1094.4;1082.8
+Operacional;IRRF;Desconto;6;486.4;476.65
+ACME_OPERACIONAL_DIARIA;HORAS NORMAIS;Provento;3;4040.4;4092.79
+ACME_OPERACIONAL_DIARIA;HORAS EXTRAS 50%;Provento;3;310.8;297.89
+ACME_OPERACIONAL_DIARIA;INSS;Desconto;3;466.2;487.54
+ACME_OPERACIONAL_DIARIA;IRRF;Desconto;3;207.2;214.52
+ACME_ADM DA FABRICA;HORAS NORMAIS;Provento;6;26332.8;25424.98
+ACME_ADM DA FABRICA;HORAS EXTRAS 50%;Provento;6;2025.6;2105.17
+ACME_ADM DA FABRICA;INSS;Desconto;6;3038.4;3124.7
+ACME_ADM DA FABRICA;IRRF;Desconto;6;1350.4;1363.44
+Apoio a Producao;HORAS NORMAIS;Provento;3;4683.9;4807.7
+Apoio a Producao;HORAS EXTRAS 50%;Provento;3;360.3;368.25
+Apoio a Producao;INSS;Desconto;3;540.45;540.14
+Apoio a Producao;IRRF;Desconto;3;240.2;235.02
+ACME_DP/RH;HORAS NORMAIS;Provento;2;3888.3;3934.46
+ACME_DP/RH;HORAS EXTRAS 50%;Provento;2;299.1;288.47
+ACME_DP/RH;INSS;Desconto;2;448.65;463.22
+ACME_DP/RH;IRRF;Desconto;2;199.4;203.69
+ACME_PRODUCAO;HORAS NORMAIS;Provento;1;2234.7;2237.6
+ACME_PRODUCAO;HORAS EXTRAS 50%;Provento;1;171.9;170.68
+ACME_PRODUCAO;INSS;Desconto;1;257.85;263.03
+ACME_PRODUCAO;IRRF;Desconto;1;114.6;114.66
+Administracao - Escritorio;HORAS NORMAIS;Provento;1;1786.2;1859.41
+Administracao - Escritorio;HORAS EXTRAS 50%;Provento;1;137.4;140.87
+Administracao - Escritorio;INSS;Desconto;1;206.1;207.51
+Administracao - Escritorio;IRRF;Desconto;1;91.6;94.47
