@@ -1,4 +1,4 @@
-# Controle Financeiro Pessoal + Consolidação de Folha de Pagamento (Demo)
+# Controle Financeiro Pessoal + Consolidação de Folha de Pagamento
 
 > **Aviso importante:** este repositório contém **exclusivamente dados fictícios**, gerados
 > programaticamente para fins de demonstração e portfólio. Nenhum nome de empresa, funcionário,
