@@ -19,6 +19,20 @@ futuramente evoluir para um modelo estruturado em Power BI:
    vinculadas por fórmulas (`INDEX`/`MATCH`, `SUMIFS`, `SUMPRODUCT`) para permitir consulta
    individual por funcionário e resumos por departamento/geral.
 
+## Ferramentas e tecnologias
+
+| Categoria | Ferramenta | Uso no projeto |
+|---|---|---|
+| Linguagem | **Python 3.14** | Extração, geração de dados fictícios e montagem dos workbooks |
+| Planilhas | **Microsoft Excel** | Camada de dados/apresentação: fórmulas, validação de dados, formatação |
+| Manipulação de planilhas | `openpyxl` | Leitura/escrita de `.xlsx`, estilos, validação de dados, fórmulas |
+| Leitura de dados tabulares | `pandas` | Limpeza e transformação de tabelas extraídas |
+| Leitura de `.xls` legado | `xlrd` | Leitura dos relatórios originais em formato antigo |
+| Extração de PDF | `pdfplumber` | Extração de texto/tabelas dos relatórios de folha em PDF |
+| Recálculo/validação de fórmulas | `pywin32` (Excel COM) | Recalcular workbooks e garantir zero erros de fórmula antes da entrega |
+| Controle de versão | **Git / GitHub** | Versionamento e publicação do projeto |
+| BI (próxima etapa) | **Power BI** | Modelagem de dados (Power Query, DAX) e dashboards — ver [ROADMAP.md](ROADMAP.md) |
+
 ## Estrutura do repositório
 
 ```
