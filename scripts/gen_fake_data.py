@@ -1,5 +1,5 @@
 """
-Gera dados ficticios consistentes para o projeto demo (RH + Financas).
+Gera dados ficticios consistentes para o projeto  (RH + Financas).
 Nao usa nomes de pessoas reais/famosas - apenas combinacoes comuns de nomes
 brasileiros genericos.
 """
@@ -152,7 +152,7 @@ def gerar_funcionarios(qtd=36):
 
 if __name__ == "__main__":
     funcs = gerar_funcionarios(36)
-    out_path = "C:/Users/igoor/Desktop/Controle Pessoal/github-demo/scripts/funcionarios_fake.json"
+    out_path = "C:/Users/igoor/Desktop/Controle Pessoal/financas-rh-powerbi/scripts/funcionarios_fake.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(funcs, f, ensure_ascii=False, indent=2)
     print(f"Gerados {len(funcs)} funcionarios ficticios em {out_path}")

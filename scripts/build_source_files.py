@@ -2,7 +2,7 @@
 """
 Gera versoes ficticias simplificadas dos 12 arquivos-fonte originais
 (10 tipos de fonte), usando os mesmos funcionarios/valores ficticios
-usados no RH_Folha_Consolidado_DEMO.xlsx.
+usados no RH_Folha_Consolidado.xlsx.
 """
 import json
 import csv
@@ -14,8 +14,8 @@ from openpyxl.styles import Font, PatternFill
 
 random.seed(7)
 
-BASE = "C:/Users/igoor/Desktop/Controle Pessoal/github-demo"
-OUT_DIR = f"{BASE}/Arquivos Fonte RH Demo"
+BASE = "C:/Users/igoor/Desktop/Controle Pessoal/github-"
+OUT_DIR = f"{BASE}/Arquivos Fonte RH"
 
 with open(f"{BASE}/scripts/funcionarios_fake.json", encoding="utf-8") as f:
     FUNCS = json.load(f)
@@ -55,7 +55,7 @@ def salvar_csv(nome, headers, linhas):
 depts_ordered = list(dict.fromkeys(f["departamento"] for f in FUNCS))
 
 
-# 1) Relacao de Empregados (era .xls) -> relacao_empregados_demo.xlsx
+# 1) Relacao de Empregados (era .xls) -> relacao_empregados.xlsx
 def gerar_relacao_empregados():
     wb, ws = novo_wb()
     ws.title = "Empregados"
@@ -63,10 +63,10 @@ def gerar_relacao_empregados():
     for i, f in enumerate(FUNCS):
         r = i + 2
         ws.append([f["codigo"], f["nome"], f["cargo"], f["admissao"], f["salario"], f["servico"], f["departamento"], f["c_de_custo"], f["nascimento"], f["sexo"]])
-    salvar(wb, "relacao_empregados_demo.xlsx")
+    salvar(wb, "relacao_empregados.xlsx")
 
 
-# 2) Relacao de Faltas (era .xls) -> relacao_de_faltas_demo.xlsx
+# 2) Relacao de Faltas (era .xls) -> relacao_de_faltas.xlsx
 def gerar_relacao_faltas():
     wb, ws = novo_wb()
     ws.title = "Faltas"
@@ -75,10 +75,10 @@ def gerar_relacao_faltas():
         previstas = 220
         ausencias = round(random.uniform(0, 12), 2) if random.random() < 0.35 else 0
         ws.append([f["nome"], previstas, previstas - ausencias, ausencias, round(ausencias / previstas, 4)])
-    salvar(wb, "relacao_de_faltas_demo.xlsx")
+    salvar(wb, "relacao_de_faltas.xlsx")
 
 
-# 3) Relacao de Atestados (era .xls) -> relacao_de_atestados_demo.xlsx
+# 3) Relacao de Atestados (era .xls) -> relacao_de_atestados.xlsx
 def gerar_relacao_atestados():
     wb, ws = novo_wb()
     ws.title = "Atestados"
@@ -87,7 +87,7 @@ def gerar_relacao_atestados():
         previstas = 220
         ausencias = round(random.uniform(0, 10), 2) if random.random() < 0.25 else 0
         ws.append([f["nome"], previstas, previstas - ausencias, ausencias, round(ausencias / previstas, 4)])
-    salvar(wb, "relacao_de_atestados_demo.xlsx")
+    salvar(wb, "relacao_de_atestados.xlsx")
 
 
 # 4-6) Relatorio de Liquidos (PDF originais, 3 variantes) -> CSV
@@ -121,7 +121,7 @@ def gerar_faltas_por_funcionario():
         horas = round(random.uniform(2, 16), 2)
         valor = round(horas * (f["salario"] / 220), 2)
         linhas.append([f["departamento"], f["codigo"], f["nome"], "HORAS FALTAS", "05/2026", valor, horas])
-    salvar_csv("relatorios_de_falta_por_funcionario_demo.csv", headers, linhas)
+    salvar_csv("relatorios_de_falta_por_funcionario.csv", headers, linhas)
 
 
 # 10) Relacao de Rescisoes Calculadas (PDF original) -> CSV
@@ -137,7 +137,7 @@ def gerar_rescisoes():
         linhas.append([f["codigo"], f["nome"], f["admissao"], aviso.isoformat(), demissao.isoformat(),
                         round(random.uniform(50, 300), 2), f["salario"], proventos, descontos,
                         round(proventos - descontos, 2), round(f["salario"] * 0.08, 2), random.choice(motivos)])
-    salvar_csv("relacao_de_rescisoes_calculadas_demo.csv", headers, linhas)
+    salvar_csv("relacao_de_rescisoes_calculadas.csv", headers, linhas)
 
 
 # 11-12) Resumo Mensal GERAL (PDF originais, Normal + Extra) -> CSV
@@ -165,13 +165,13 @@ if __name__ == "__main__":
     gerar_relacao_empregados()
     gerar_relacao_faltas()
     gerar_relacao_atestados()
-    gerar_liquidos("relatorio_de_liquidos_folha_extra_demo.csv", "Extra", 0.02, 0.08, amostragem=0.4)
-    gerar_liquidos("relatorio_de_liquidos_folha_normal_principal_demo.csv", "Normal Principal", 0.55, 0.62)
-    gerar_liquidos("relatorio_de_liquidos_folha_normal_quinzena_demo.csv", "Normal Quinzena", 0.38, 0.45)
-    gerar_horas_extras("relatorios_de_hora_extra_folha_extra_demo.csv", "Extra", amostragem=0.3)
-    gerar_horas_extras("relatorios_de_hora_extra_folha_normal_demo.csv", "Normal", amostragem=0.6)
+    gerar_liquidos("relatorio_de_liquidos_folha_extra.csv", "Extra", 0.02, 0.08, amostragem=0.4)
+    gerar_liquidos("relatorio_de_liquidos_folha_normal_principal.csv", "Normal Principal", 0.55, 0.62)
+    gerar_liquidos("relatorio_de_liquidos_folha_normal_quinzena.csv", "Normal Quinzena", 0.38, 0.45)
+    gerar_horas_extras("relatorios_de_hora_extra_folha_extra.csv", "Extra", amostragem=0.3)
+    gerar_horas_extras("relatorios_de_hora_extra_folha_normal.csv", "Normal", amostragem=0.6)
     gerar_faltas_por_funcionario()
     gerar_rescisoes()
-    gerar_resumo_mensal("resumo_mensal_geral_folha_normal_demo.csv", "Normal")
-    gerar_resumo_mensal("resumo_mensal_geral_folha_extra_demo.csv", "Extra")
+    gerar_resumo_mensal("resumo_mensal_geral_folha_normal.csv", "Normal")
+    gerar_resumo_mensal("resumo_mensal_geral_folha_extra.csv", "Extra")
     print("Concluido.")

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Constroi RH_Folha_Consolidado_DEMO.xlsx com a mesma estrutura de abas e
+Constroi RH_Folha_Consolidado.xlsx com a mesma estrutura de abas e
 formulas do workbook real, populado 100% com dados ficticios.
 """
 import json
@@ -13,7 +13,7 @@ from openpyxl.utils import get_column_letter
 
 random.seed(7)
 
-BASE = "C:/Users/igoor/Desktop/Controle Pessoal/github-demo"
+BASE = "C:/Users/igoor/Desktop/Controle Pessoal/github-"
 with open(f"{BASE}/scripts/funcionarios_fake.json", encoding="utf-8") as f:
     FUNCS = json.load(f)
 
@@ -63,7 +63,7 @@ def build():
     ws = wb.create_sheet("Capa")
     ws["B5"] = "ACME PRE-MOLDADOS INTELIGENTES LTDA (DADOS FICTICIOS)"
     ws["B5"].font = TITLE_FONT
-    ws["B6"] = "Controle de Folha de Pagamento - Consolidado RH (DEMO)"
+    ws["B6"] = "Controle de Folha de Pagamento - Consolidado RH ()"
     ws["B6"].font = Font(name="Arial", size=13, bold=True)
     ws["B7"] = "Competencia: 05/2026 (fictício)"
     ws["B7"].font = Font(name="Arial", size=11)
@@ -90,7 +90,7 @@ def build():
 
     # ---------------- Funcionarios ----------------
     ws = wb.create_sheet("Funcionarios")
-    ws["A1"] = "ACME - Cadastro de Funcionarios (DEMO)"
+    ws["A1"] = "ACME - Cadastro de Funcionarios ()"
     ws["A1"].font = Font(name="Arial", bold=True, size=12)
     headers = ["Codigo", "Nome", "Cargo", "Admissao", "Salario", "Servico", "Departamento", "C_de_Custo", "Nascimento", "Sexo"]
     for c, h in enumerate(headers, start=1):
@@ -113,7 +113,7 @@ def build():
 
     # ---------------- Liquidos ----------------
     ws = wb.create_sheet("Liquidos")
-    ws["A1"] = "ACME - Valores Liquidos Pagos (DEMO)"
+    ws["A1"] = "ACME - Valores Liquidos Pagos ()"
     ws["A1"].font = Font(name="Arial", bold=True, size=12)
     headers = ["Departamento_Num", "Departamento", "Codigo", "Nome", "Valor", "Data_Pagamento", "Tipo Folha", "Cargo (vinculo)", "C. de Custo (vinculo)"]
     for c, h in enumerate(headers, start=1):
@@ -146,7 +146,7 @@ def build():
 
     # ---------------- Horas_Extras ----------------
     ws = wb.create_sheet("Horas_Extras")
-    ws["A1"] = "ACME - Horas Extras (DEMO)"
+    ws["A1"] = "ACME - Horas Extras ()"
     ws["A1"].font = Font(name="Arial", bold=True, size=12)
     headers = ["Departamento_Num", "Departamento", "Codigo", "Nome", "Rubrica_Num", "Rubrica_Nome", "Competencia",
                "Valor_Calculado", "Horas", "Tipo_Movimento", "Unidade", "Tipo Folha", "Cargo (vinculo)", "C. de Custo (vinculo)"]
@@ -183,7 +183,7 @@ def build():
     # ---------------- Faltas / Atestados ----------------
     def build_faltas_sheet(nome_aba, tipo_label):
         ws = wb.create_sheet(nome_aba)
-        ws["A1"] = f"ACME - {tipo_label} (DEMO)"
+        ws["A1"] = f"ACME - {tipo_label} ()"
         ws["A1"].font = Font(name="Arial", bold=True, size=12)
         headers = ["Funcionario", "Previstas_h", "Trabalhadas_h", "Ausencias_h", "Pct_Ausencias", "Tipo",
                    "Codigo (vinculo)", "Departamento (vinculo)", "Cargo (vinculo)"]
@@ -213,7 +213,7 @@ def build():
 
     # ---------------- Faltas_Detalhado ----------------
     ws = wb.create_sheet("Faltas_Detalhado")
-    ws["A1"] = "ACME - Faltas Detalhado (DEMO)"
+    ws["A1"] = "ACME - Faltas Detalhado ()"
     ws["A1"].font = Font(name="Arial", bold=True, size=12)
     headers = ["Departamento_Num", "Departamento", "Codigo", "Nome", "Rubrica_Num", "Rubrica_Nome",
                "Competencia", "Valor_Calculado", "Horas", "Tipo_Movimento", "Unidade"]
@@ -240,7 +240,7 @@ def build():
 
     # ---------------- Rescisoes ----------------
     ws = wb.create_sheet("Rescisoes")
-    ws["A1"] = "ACME - Rescisoes (DEMO)"
+    ws["A1"] = "ACME - Rescisoes ()"
     ws["A1"].font = Font(name="Arial", bold=True, size=12)
     headers = ["Codigo", "Empregado", "Admissao", "Aviso", "Demissao", "Saldo_FGTS", "Salario",
                "Proventos", "Descontos", "Liquido", "FGTS_Rescisorio", "Motivo_Demissao",
@@ -276,7 +276,7 @@ def build():
 
     # ---------------- Rubricas_Folha ----------------
     ws = wb.create_sheet("Rubricas_Folha")
-    ws["A1"] = "ACME - Rubricas da Folha (DEMO)"
+    ws["A1"] = "ACME - Rubricas da Folha ()"
     ws["A1"].font = Font(name="Arial", bold=True, size=12)
     headers = ["Departamento_Num", "Departamento", "Rubrica_Num", "Rubrica_Nome", "Tipo",
                "N_Empregados", "Valor_Informado", "Valor_Calculado", "Tipo Folha"]
@@ -318,7 +318,7 @@ def build():
 
     # ---------------- Resumo_Departamento ----------------
     ws = wb.create_sheet("Resumo_Departamento")
-    ws["A1"] = "ACME - Resumo por Departamento (DEMO)"
+    ws["A1"] = "ACME - Resumo por Departamento ()"
     ws["A1"].font = Font(name="Arial", bold=True, size=12)
     headers = ["Departamento_Num", "Departamento", "Tipo Folha", "Total_Proventos", "Total_Descontos", "Liquido_Depto"]
     for c, h in enumerate(headers, start=1):
@@ -344,7 +344,7 @@ def build():
 
     # ---------------- Resumo_Geral ----------------
     ws = wb.create_sheet("Resumo_Geral")
-    ws["A1"] = "Resumo Geral - Folha de Pagamento (Competencia 05/2026) (DEMO)"
+    ws["A1"] = "Resumo Geral - Folha de Pagamento (Competencia 05/2026) ()"
     ws["A1"].font = Font(name="Arial", bold=True, size=13)
     ws["A3"] = "Indicador"
     ws["B3"] = "Valor"
@@ -379,7 +379,7 @@ def build():
     ws = wb.create_sheet("Ficha_Funcionario")
     ws["B2"] = "Ficha do Funcionario"
     ws["B2"].font = Font(name="Arial", bold=True, size=14)
-    ws["B3"] = "Selecione o Codigo do funcionario na celula abaixo (dropdown) para ver todos os dados vinculados. (DEMO)"
+    ws["B3"] = "Selecione o Codigo do funcionario na celula abaixo (dropdown) para ver todos os dados vinculados. ()"
     ws["B3"].font = Font(name="Arial", italic=True, size=9)
     ws["B5"] = "Codigo:"
     ws["C5"] = FUNCS[0]["codigo"]
@@ -416,13 +416,13 @@ def build():
     wb.move_sheet("Ficha_Funcionario", offset=-(len(wb.sheetnames) - 1))
 
     # limpar metadados
-    wb.properties.creator = "github-demo"
-    wb.properties.lastModifiedBy = "github-demo"
-    wb.properties.title = "RH_Folha_Consolidado_DEMO"
+    wb.properties.creator = "github-"
+    wb.properties.lastModifiedBy = "github-"
+    wb.properties.title = "RH_Folha_Consolidado"
     wb.properties.company = None
     wb.properties.category = None
 
-    out = f"{BASE}/RH_Folha_Consolidado_DEMO.xlsx"
+    out = f"{BASE}/RH_Folha_Consolidado.xlsx"
     wb.save(out)
     print("Salvo:", out)
 

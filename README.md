@@ -13,7 +13,7 @@ futuramente evoluir para um modelo estruturado em Power BI:
 1. **Finanças Pessoais** (`Financas_Pessoais.xlsx`) — planilha de controle financeiro pessoal com
    abas de Contas, Categorias, Lançamentos, Orçamento (planejado x realizado) e Resumo mensal.
 
-2. **Consolidado de RH / Folha de Pagamento** (`RH_Folha_Consolidado_DEMO.xlsx`) — workbook que
+2. **Consolidado de RH / Folha de Pagamento** (`RH_Folha_Consolidado.xlsx`) — workbook que
    consolida diferentes relatórios de folha de pagamento (relação de empregados, líquidos pagos,
    horas extras, faltas, atestados, rescisões, rubricas de folha) em um único arquivo, com abas
    vinculadas por fórmulas (`INDEX`/`MATCH`, `SUMIFS`, `SUMPRODUCT`) para permitir consulta
@@ -22,29 +22,29 @@ futuramente evoluir para um modelo estruturado em Power BI:
 ## Estrutura do repositório
 
 ```
-github-demo/
-├── RH_Folha_Consolidado_DEMO.xlsx      # Workbook consolidado de RH (dados fictícios)
+financas-rh-powerbi/
+├── RH_Folha_Consolidado.xlsx      # Workbook consolidado de RH (dados fictícios)
 ├── Financas_Pessoais.xlsx              # Template de finanças pessoais (dados de exemplo)
-├── Arquivos Fonte RH Demo/             # Versões fictícias dos relatórios de origem
-│   ├── relacao_empregados_demo.xlsx
-│   ├── relacao_de_faltas_demo.xlsx
-│   ├── relacao_de_atestados_demo.xlsx
-│   ├── relatorio_de_liquidos_folha_normal_principal_demo.csv
-│   ├── relatorio_de_liquidos_folha_normal_quinzena_demo.csv
-│   ├── relatorio_de_liquidos_folha_extra_demo.csv
-│   ├── relatorios_de_hora_extra_folha_normal_demo.csv
-│   ├── relatorios_de_hora_extra_folha_extra_demo.csv
-│   ├── relatorios_de_falta_por_funcionario_demo.csv
-│   ├── relacao_de_rescisoes_calculadas_demo.csv
-│   ├── resumo_mensal_geral_folha_normal_demo.csv
-│   └── resumo_mensal_geral_folha_extra_demo.csv
+├── Arquivos Fonte RH/             # Versões fictícias dos relatórios de origem
+│   ├── relacao_empregados.xlsx
+│   ├── relacao_de_faltas.xlsx
+│   ├── relacao_de_atestados.xlsx
+│   ├── relatorio_de_liquidos_folha_normal_principal.csv
+│   ├── relatorio_de_liquidos_folha_normal_quinzena.csv
+│   ├── relatorio_de_liquidos_folha_extra.csv
+│   ├── relatorios_de_hora_extra_folha_normal.csv
+│   ├── relatorios_de_hora_extra_folha_extra.csv
+│   ├── relatorios_de_falta_por_funcionario.csv
+│   ├── relacao_de_rescisoes_calculadas.csv
+│   ├── resumo_mensal_geral_folha_normal.csv
+│   └── resumo_mensal_geral_folha_extra.csv
 └── scripts/                            # Scripts Python usados para gerar os dados fictícios
     ├── gen_fake_data.py
-    ├── build_rh_demo.py
+    ├── build_rh.py
     └── build_source_files.py
 ```
 
-## RH_Folha_Consolidado_DEMO.xlsx — abas
+## RH_Folha_Consolidado.xlsx — abas
 
 | Aba | Descrição |
 |---|---|
@@ -61,7 +61,7 @@ github-demo/
 | Resumo_Geral | KPIs consolidados (`SUM`, `COUNTA`, `SUMIFS`) |
 
 Todos os funcionários, cargos, departamentos, datas e valores são **gerados aleatoriamente** por
-script (`scripts/gen_fake_data.py` + `scripts/build_rh_demo.py`), mantendo apenas rótulos
+script (`scripts/gen_fake_data.py` + `scripts/build_rh.py`), mantendo apenas rótulos
 genéricos de cargo/departamento (ex.: "Operacional", "Assistente Financeiro") que não constituem
 dado sensível.
 
@@ -70,7 +70,7 @@ dado sensível.
 - `scripts/gen_fake_data.py`: gera ~36 funcionários fictícios (nomes combinando prenomes e
   sobrenomes brasileiros comuns, nunca nomes de pessoas reais), cargos, departamentos, datas de
   admissão/nascimento e salários dentro de faixas plausíveis por cargo.
-- `scripts/build_rh_demo.py`: monta o workbook `RH_Folha_Consolidado_DEMO.xlsx` replicando a
+- `scripts/build_rh.py`: monta o workbook `RH_Folha_Consolidado.xlsx` replicando a
   estrutura de abas e fórmulas do projeto original, recalculado via Excel (COM) para garantir que
   não há erros de fórmula (`#REF!`, `#N/A`, etc.).
 - `scripts/build_source_files.py`: gera as versões fictícias simplificadas dos 10 tipos de

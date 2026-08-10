@@ -7,7 +7,7 @@ consolidados até um modelo estruturado no Power BI. Todos os dados citados aqui
 ## Onde estamos
 
 - [x] `Financas_Pessoais.xlsx` — controle manual (Contas, Categorias, Lançamentos, Orçamento, Resumo)
-- [x] `RH_Folha_Consolidado_DEMO.xlsx` — consolidação de folha de pagamento (Funcionários, Líquidos,
+- [x] `RH_Folha_Consolidado.xlsx` — consolidação de folha de pagamento (Funcionários, Líquidos,
       Horas Extras, Faltas, Atestados, Rescisões, Rubricas de Folha, Resumos por Departamento/Geral)
 - [x] Vínculos internos entre abas (INDEX/MATCH por Código, SUMIFS/SUMPRODUCT nos resumos)
 - [x] Direção visual dos dois dashboards (RH e Financeiro) validada em mockup
